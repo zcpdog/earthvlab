@@ -1,0 +1,28 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name),
+	:html => { :onsubmit => "$('label_set_name').enable();" }) do |f| %>
+<TR>
+  <TD height=35 width=40>
+	  <%=image_tag "login/user.gif", width: 30, height: 30%>
+  </TD>
+  <TD height=35 width=38>用户</TD>
+  <TD height=35 width=242>
+	  <%= f.email_field :email, :autofocus => true %>
+  </TD>
+</TR>
+<TR>
+  <TD height=35>
+	<%=image_tag "login/password.gif", width: 28, height: 32%>
+	</TD>
+  <TD height=35>密码</TD>
+  <TD height=35>
+	  <%= f.password_field :password %></div>
+  </TD>
+</TR>
+<TR>
+  <TD height=40>&nbsp;</TD>
+  <TD height=40>&nbsp;</TD>
+  <TD height=50>
+	  <%= image_submit_tag "login/login.gif" %>
+  </TD>
+</TR>
+<% end %>

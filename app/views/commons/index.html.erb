@@ -1,0 +1,34 @@
+<div id="container" class="hfeed">
+	<%=render "layouts/header"%>
+	<div id="content" class="grid col-620">
+		<div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#">
+			<%=render_breadcrumbs %>
+		</div>
+		<%@events.each do |event|%>
+			<div id="shortpost">
+				<h1 class="post-title">
+					<%=link_to event.title, eval("#{event.class.name.downcase}_path(event)")%>
+				</h1>                
+				<span class="rpwe-time"><%=time_ago_in_words event.created_at%></span>
+			    <div class="post-entry">
+			     	<p><%=event.plain_content%></p>
+			    </div><!-- end of .post-entry -->
+			</div>      
+		<%end%>
+		<%= paginate @events %>  
+	</div><!-- end of #content -->
+	<div id="widgets" class="grid col-220 fit">
+		<div id="text-13" class="widget-wrapper widget_text">
+			<div class="widget-title"></div>			
+			</div>
+			<img src="/assets/right_side.png"/>
+			<div id="text-16" class="widget-wrapper widget_text">
+				<div class="widget-title">更多链接</div>			
+				<div class="textwidget">
+					<a href="/">关于我们</a>
+					<br/>
+					<a href="/">联系我们</a>
+				</div>
+			</div>
+	</div><!-- end of #widgets -->
+</div>

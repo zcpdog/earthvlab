@@ -1,0 +1,34 @@
+<div id="footer" class="clearfix">
+    <div id="footer-wrapper">
+        <div class="grid col-940">
+			        <ul id="menu-footermenu" class="footer-menu">
+		   			  <li id="menu-item-0"
+		   			 	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-0">
+		   				<%=link_to "首页", root_path%>
+		   			  </li>
+		  			  <%Page.root.each do |page|%>
+		  			  	<li id="menu-item-<%=page.id%>" 
+		  					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-<%=page.id%>">
+		  					<%=link_to page.title, page_path(page)%>
+		  				  <%if page.has_children?%>
+		  				  	<ul class="sub-menu">
+		  						<%page.children.each do |son_page|%>
+		  							<li id="menu-item-<%=son_page.id%>" 
+		  								class="menu-item menu-item-type-post_type 
+										 menu-item-object-page menu-item-<%=son_page.id%>">
+		  								<%=link_to son_page.title, page_path(son_page)%>
+		  							</li>
+		  						<%end%>
+		  					</ul>
+		  				  <%end%>
+		  			  	</li>
+		  			  <%end%>
+				  </ul>
+         <div class="showmotto">虚拟实验室 和实践同行</div>
+	 	</div><!-- end of col-940 -->
+                             
+	    <div class="grid col-860 copyright">
+	        © 2013 <a href="/">北京大学地球科学虚拟仿真实验教学中心</a> | 北京市海淀区颐和园路5号 | 邮编：100871 
+	    </div><!-- end of .copyright -->
+	</div><!-- end #footer-wrapper -->
+</div><!-- end #footer -->

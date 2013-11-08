@@ -1,0 +1,20 @@
+<div id="container" class="hfeed">
+	<%=render "layouts/header"%>
+	<div id="content-full" class="grid col-940">
+        <div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#">
+			<%=render_breadcrumbs %>
+        </div>
+		<div id="post-<%=@page.id%>" class="post-41 page type-page status-publish hentry">  
+			<h1 class="post-title"><%=@page.title%></h1> 
+            <div class="post-entry">
+				<div class="indent">
+				</div>
+				<%=@page.content.html_safe unless @page.resumes.any?%>
+				<%@page.resumes.each do |resume|%>
+					<%=resume.content.html_safe%>
+					<br>
+				<%end%>
+        	</div>
+		</div>    
+	</div>
+</div>

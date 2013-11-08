@@ -1,0 +1,52 @@
+<div id="header">
+    <div id="logo">
+        <a href="/"><%=image_tag "logo.jpg", :heigit =>95, :style => "float:left;"%></a>
+	    <form method="get" class="search" id="searchform" action="/search">
+			<input type="text" class="field" name="search" id="search" placeholder="您需要什么？">
+			<input type="submit" class="submit-button" name="submit" id="searchsubmit" value="搜索" >
+		</form>
+    </div><!-- end of #logo -->
+	 <div class="main-nav">
+		 <ul id="menu-main" class="menu" >
+			 <li id="menu-item-0"
+			 	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-0">
+				<%=link_to "首页", root_path%>
+			 </li>
+			  <%Page.root.each do |page|%>
+			  	<li id="menu-item-<%=page.id%>" 
+					class="menu-item menu-item-type-post_type menu-item-object-page menu-item-<%=page.id%>">
+					<%=link_to page.title, page_path(page)%>
+				  <%if page.has_children?%>
+				  	<ul class="sub-menu">
+						<%page.children.each do |son_page|%>
+							<li id="menu-item-<%=son_page.id%>" 
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-<%=son_page.id%>">
+								<%=link_to son_page.title, page_path(son_page)%>
+							</li>
+						<%end%>
+					</ul>
+				  <%end%>
+			  	</li>
+			  <%end%>
+		  </ul>
+	  </div>                
+	  <ul class="submenudood">
+		  <%if @page.present?%>
+		    <%if @page.root?%>
+			  <%@page.children.each do |son_page|%>
+			  	<li class="page_item page-item-<%=son_page.id%>">
+					<%=link_to son_page.title, page_path(son_page)%>
+				</li>
+			  <%end%>
+			 <%else%>
+				  <%@page.parent.children.each do |son_page|%>
+				  	<li class="page_item page-item-<%=son_page.id%>">
+						<%=link_to son_page.title, page_path(son_page)%>
+					</li>
+				  <%end%>
+			 <%end%>
+			 
+		  <%end%>
+	  </ul>         
+</div><!-- end of #header -->
+   

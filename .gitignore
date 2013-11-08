@@ -1,0 +1,24 @@
+ftags
+tags
+cscope*
+*.DS_Store
+config/database.yml
+db/schema.rb
+log/*
+tmp/*
+public/system/*
+public/uploads/*
+public/data/*
+public/ckeditor_assets/*
+vendor/cache
+.bundle
+*.log
+*.json
+*.swp
+*.swo
+rerun.txt
+db/*.sql
+
+# piv config file:
+.piv
+dump.rdb

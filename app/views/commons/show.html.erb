@@ -1,0 +1,32 @@
+<div id="container" class="hfeed">
+	<%=render "layouts/header"%>
+<div id="content" class="grid col-620">
+	<div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#">
+		<%=render_breadcrumbs %>
+	</div>        
+	<div id="post-<%=@event.id%>" class="post-41 page type-page status-publish hentry">       
+		<!--Removed the retreat loop-header command-->
+		<h1 class="post-title"><%=@event.title%></h1> 
+		<span class="rpwe-time"><%=time_ago_in_words @event.created_at%></span>
+	    <div class="post-entry">
+			<div class="indent">
+			</div>
+			<%=@event.content.html_safe%>
+	    </div><!-- end of .post-entry -->
+	</div>
+</div><!-- end of #content -->
+<div id="widgets" class="grid col-220 fit">
+	<div id="text-13" class="widget-wrapper widget_text">
+		<div class="widget-title"><%=@event.title%></div>			
+		</div>
+		<%=image_tag "right_side.png"%>
+		<div id="text-16" class="widget-wrapper widget_text">
+			<div class="widget-title">更多链接</div>			
+			<div class="textwidget">
+				<a href="/">关于我们</a>
+				<br/>
+				<a href="/">联系我们</a>
+			</div>
+		</div>
+</div><!-- end of #widgets -->
+</div>
