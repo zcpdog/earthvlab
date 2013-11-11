@@ -1,7 +1,6 @@
 RailsAdmin.config do |config|
   config.authorize_with :cancan
   
-  
   config.main_app_name = [' 北京大学地球科学虚拟仿真实验教学中心', '后台管理']
   config.model Page do
     label '页面' 
@@ -59,8 +58,8 @@ RailsAdmin.config do |config|
   end
   
   config.model Refer do
-    label "国际行业咨询"
-    label_plural "国际行业咨询"
+    label "国际行业资讯"
+    label_plural "国际行业资讯"
     edit do
       field :title
       field :content, :ck_editor

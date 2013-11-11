@@ -3,7 +3,7 @@ class RefersController < ApplicationController
   
   def index
     add_breadcrumb "首页", "/"
-    add_breadcrumb "全部咨询"
+    add_breadcrumb "全部资讯"
     @events = Refer.all.page params[:page]
     render "commons/index"
   end
