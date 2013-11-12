@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   before_filter :find_page, :only => [:show]
   
   def show
+    add_breadcrumb "首页", root_path
     if @page.root?
       add_breadcrumb @page.title
     else
@@ -11,7 +12,6 @@ class PagesController < ApplicationController
         the_page = the_page.parent
         parents.push the_page
       end
-      add_breadcrumb "首页", root_path
       parents.reverse_each {|page| add_breadcrumb page.title, page_path(page)}
       add_breadcrumb @page.title
     end
