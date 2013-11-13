@@ -66,13 +66,23 @@ RailsAdmin.config do |config|
     end
   end
   
-  config.model 'User' do
+  config.model User do
     label_plural "用户"
     label "用户"
     edit do
       field :email 
       field :password, :password
       field :role
+    end
+  end
+  
+  config.model Gallery do
+    label_plural "画廊"
+    label "图片"
+    edit do
+      field :title
+      field :avatar, :paperclip
+      field :show
     end
   end
   

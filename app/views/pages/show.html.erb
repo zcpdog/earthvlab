@@ -12,7 +12,7 @@
 				<%=@page.content.html_safe unless @page.resumes.any?%>
 				<%@page.resumes.each do |resume|%>
 					<%=resume.content.html_safe%>
-					<br>
+					<hr>
 				<%end%>
         	</div>
 		</div>    
