@@ -86,6 +86,13 @@ RailsAdmin.config do |config|
     end
   end
   
-  
-  
+  config.model Link do
+    label_plural "友情链接"
+    label "友情链接"
+    edit do
+      field :name
+      field :url
+    end
+  end
+
 end
