@@ -275,6 +275,12 @@ sub {
 	margin-right: 1.3333333333%;
 }
 
+.col-480 {
+	width: 49%;
+	display: inline;
+	margin-right: 2%;
+}
+
 .col-300 {
 	width: 31.914893617021%;
 }

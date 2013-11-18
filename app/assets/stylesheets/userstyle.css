@@ -431,6 +431,9 @@ background-color: #65C5F9;
 color: #000;
 }
 
+.message_image {
+	float:left;
+}
 
 
 .front-page .menu .current_page_item a {

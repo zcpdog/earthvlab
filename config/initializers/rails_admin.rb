@@ -36,6 +36,7 @@ RailsAdmin.config do |config|
     edit do
       include_all_fields
       field :content, :ck_editor
+      field :thumb, :paperclip
     end
   end
   
@@ -45,6 +46,7 @@ RailsAdmin.config do |config|
     edit do
       include_all_fields
       field :content, :ck_editor
+      field :thumb, :paperclip
     end
   end
   
@@ -54,6 +56,7 @@ RailsAdmin.config do |config|
     edit do
       include_all_fields
       field :content, :ck_editor
+      field :thumb, :paperclip
     end
   end
   
@@ -63,6 +66,7 @@ RailsAdmin.config do |config|
     edit do
       field :title
       field :content, :ck_editor
+      field :thumb, :paperclip
     end
   end
   

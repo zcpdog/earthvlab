@@ -6,7 +6,7 @@ class Gallery < ActiveRecord::Base
   default_scope {where(show: true)}
   validates_attachment_size :avatar, :less_than => 10.megabytes
   validates_attachment_presence :avatar
-  validates_presence_of :title, :show
+  validates_presence_of :title
   
   def url
     url(:medium)
