@@ -47,7 +47,7 @@
 						<h3 class="rpwe-title">
 							<%=link_to info.title, info_path(info)%>
 						</h3>
-						<span class="rpwe-time">发布于 <%=I18n.l info.created_at%></span>
+						<span class="rpwe-time">发布于 <%= l info.created_at, format: :long %></span>
 						<div class="rpwe-summary">
 							<%=display_image info%>
 							<%=info.plain_content%>
@@ -70,7 +70,7 @@
 					<%=link_to refer.title, refer_path(refer) %> 
 				</h3>
 				<span class="rpwe-time">
-					发布于 <%=I18n.l refer.created_at%>
+					发布于 <%= l refer.created_at, format: :long %>
 				</span>
 				<div class="rpwe-summary">
 					<%=display_image refer%>
@@ -96,7 +96,7 @@
 	  				<h3 class="rpwe-title">
 	  					<%=link_to news.title, news_path(news) %>
 	  				</h3>
-	  				<span class="rpwe-time">发布于 <%=I18n.l news.created_at%></span>
+	  				<span class="rpwe-time">发布于 <%= l news.created_at, format: :long %></span>
 	  				<div class="rpwe-summary">
 						<%=display_image news%>
 						<%=news.plain_content%>
@@ -122,7 +122,7 @@
 						<%=link_to achievement.title, achievement_path(achievement)%>
 					</h3>
 					<span class="rpwe-time">
-						发布于 <%=I18n.l achievement.created_at%>
+						发布于 <%= l achievement.created_at, format: :long %>
 					</span>
 					<div class="rpwe-summary">
 						<%=display_image achievement%>
