@@ -19,7 +19,11 @@
 	<div id="text-13" class="widget-wrapper widget_text">
 		<div class="widget-title"><%=@event.title%></div>			
 		</div>
-		<%=image_tag "right_side.png"%>
+		<%if @event.has_thumb?%>
+			<%=image_tag @event.thumb.url(:medium)%>
+		<%else%>
+			<%=image_tag "right_side.png"%>
+		<%end%>
 		<div id="text-16" class="widget-wrapper widget_text">
 			<div class="widget-title">更多链接</div>			
 			<div class="textwidget">

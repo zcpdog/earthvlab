@@ -42,14 +42,15 @@
 					<div id="rpwe_widget-3" class="widget-wrapper rpwe_widget recent-posts-extended">
 			<div class="rpwe-block">
 				<ul>
-					<%Info.all.each do |info|%>
+					<%Info.recent.each do |info|%>
 					<li class="rpwe-clearfix">
 						<h3 class="rpwe-title">
 							<%=link_to info.title, info_path(info)%>
 						</h3>
 						<span class="rpwe-time"><%=time_ago_in_words info.created_at%></span>
 						<div class="rpwe-summary">
-							<%=display_content info%>
+							<%=display_image info%>
+							<p><%=info.plain_content%></p>
 						</div>
 					</li>
 					<%end%>
@@ -63,14 +64,17 @@
 		<div id="rpwe_widget-3" class="widget-wrapper rpwe_widget recent-posts-extended">
 	<div class="rpwe-block">
 		<ul>
-			<%Refer.all.each do |refer|%>
+			<%Refer.recent.each do |refer|%>
 				<li class="rpwe-clearfix">
 				<h3 class="rpwe-title">
-					<%=link_to refer.title, refer_path(refer) %>
+					<%=link_to refer.title, refer_path(refer) %> 
 				</h3>
-				<span class="rpwe-time"><%=time_ago_in_words refer.created_at%></span>
+				<span class="rpwe-time">
+					发布于 <%=refer.created_at%>
+				</span>
 				<div class="rpwe-summary">
-					<%=display_content refer%>
+					<%=display_image refer%>
+					<p style="float:right"><%=refer.plain_content%>></p>
 				</div>
 				</li>
 			<%end%>
@@ -87,14 +91,15 @@
 	  		<div id="rpwe_widget-3" class="widget-wrapper rpwe_widget recent-posts-extended">
 	  			<div class="rpwe-block">
 	  		<ul>
-	  			<%News.all.each do |news|%>
+	  			<%News.recent.each do |news|%>
 	  				<li class="rpwe-clearfix">
 	  				<h3 class="rpwe-title">
 	  					<%=link_to news.title, news_path(news) %>
 	  				</h3>
 	  				<span class="rpwe-time"><%=time_ago_in_words news.created_at%></span>
 	  				<div class="rpwe-summary">
-						<%=display_content news%>
+						<%=display_image news%>
+						<p><%=news.plain_content%></p>
 	  				</div>
 	  				</li>
 	  			<%end%>
@@ -111,7 +116,7 @@
 	<div id="rpwe_widget-2" class="widget-wrapper rpwe_widget recent-posts-extended">
 	<div class="rpwe-block">
 		<ul>
-			<%Achievement.all.each do |achievement|%>
+			<%Achievement.recent.each do |achievement|%>
 				<li class="rpwe-clearfix">
 					<h3 class="rpwe-title">
 						<%=link_to achievement.title, achievement_path(achievement)%>
@@ -120,7 +125,8 @@
 						<%=time_ago_in_words achievement.created_at%>
 					</span>
 					<div class="rpwe-summary">
-						<%=display_content achievement%>
+						<%=display_image achievement%>
+						<p><%=achievement.plain_content%></p>
 					</div>
 				</li>
 			<%end%>
