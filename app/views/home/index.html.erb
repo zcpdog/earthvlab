@@ -50,7 +50,7 @@
 						<span class="rpwe-time"><%=time_ago_in_words info.created_at%></span>
 						<div class="rpwe-summary">
 							<%=display_image info%>
-							<p><%=info.plain_content%></p>
+							<%=info.plain_content%>
 						</div>
 					</li>
 					<%end%>
@@ -74,7 +74,7 @@
 				</span>
 				<div class="rpwe-summary">
 					<%=display_image refer%>
-					<p style="float:right"><%=refer.plain_content%>></p>
+					<%=refer.plain_content%>
 				</div>
 				</li>
 			<%end%>
@@ -99,7 +99,7 @@
 	  				<span class="rpwe-time"><%=time_ago_in_words news.created_at%></span>
 	  				<div class="rpwe-summary">
 						<%=display_image news%>
-						<p><%=news.plain_content%></p>
+						<%=news.plain_content%>
 	  				</div>
 	  				</li>
 	  			<%end%>
@@ -126,7 +126,7 @@
 					</span>
 					<div class="rpwe-summary">
 						<%=display_image achievement%>
-						<p><%=achievement.plain_content%></p>
+						<%=achievement.plain_content%>
 					</div>
 				</li>
 			<%end%>
