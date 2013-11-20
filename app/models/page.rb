@@ -3,8 +3,6 @@ class Page < ActiveRecord::Base
   has_many    :children, foreign_key: :parent_id , class_name: :Page , dependent: :destroy
   has_many    :resumes
   scope :root, -> { where parent_id: nil }
-  #scope :resume_pages, -> { where title.include? "简历"}
-  
   
   def has_parent?
     parent.present?

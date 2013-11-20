@@ -3,7 +3,7 @@ class Gallery < ActiveRecord::Base
                     :url => "/ckeditor_assets/galleries/:id/:style_:basename.:extension",
                     :path => ":rails_root/public/ckeditor_assets/galleries/:id/:style_:basename.:extension"
    
-  default_scope {where(show: true)}
+  scope :visiable, ->{ where(show: true) }
   validates_attachment_size :avatar, :less_than => 10.megabytes
   validates_attachment_presence :avatar
   validates_presence_of :title
