@@ -10,14 +10,18 @@ RailsAdmin.config do |config|
       field :parent
       field :content, :ck_editor
     end
+    list do
+      field :title
+      field :parent
+      field :created_at
+      field :updated_at
+    end
   end
   
   config.model Resume do
     label '简历' 
     label_plural '简历' 
     edit do
-      field :title
-      field :page
       configure :user do
         visible false
       end
@@ -27,6 +31,11 @@ RailsAdmin.config do |config|
         end
       end
       field :content, :ck_editor
+    end
+    list do
+      field :user
+      field :created_at
+      field :updated_at
     end
   end
   
@@ -38,6 +47,12 @@ RailsAdmin.config do |config|
       field :content, :ck_editor
       field :thumb, :paperclip
     end
+    list do
+      field :thumb
+      field :title
+      field :created_at
+      field :updated_at
+    end
   end
   
   config.model Achievement do
@@ -47,6 +62,12 @@ RailsAdmin.config do |config|
       include_all_fields
       field :content, :ck_editor
       field :thumb, :paperclip
+    end
+    list do
+      field :thumb
+      field :title
+      field :created_at
+      field :updated_at
     end
   end
   
@@ -58,6 +79,12 @@ RailsAdmin.config do |config|
       field :content, :ck_editor
       field :thumb, :paperclip
     end
+    list do
+      field :thumb
+      field :title
+      field :created_at
+      field :updated_at
+    end
   end
   
   config.model Refer do
@@ -68,15 +95,50 @@ RailsAdmin.config do |config|
       field :content, :ck_editor
       field :thumb, :paperclip
     end
+    list do
+      field :thumb
+      field :title
+      field :created_at
+      field :updated_at
+    end
   end
   
   config.model User do
     label_plural "用户"
     label "用户"
     edit do
-      field :email 
-      field :password, :password
-      field :role
+      field :name do
+        label "姓名"
+      end
+      field :email do
+        label "邮箱"
+      end
+      field :title do 
+        label "职务"
+      end
+      field :role do
+        label "系统角色"
+      end
+      field :password, :password do
+        label "密码"
+      end
+    end
+    
+    list do
+      field :name do
+        label "姓名"
+      end
+      field :email do
+        label "邮箱"
+      end
+      field :title do 
+        label "职务"
+      end
+      field :role do
+        label "系统角色"
+      end
+      field :created_at
+      field :updated_at
     end
   end
   
@@ -96,6 +158,15 @@ RailsAdmin.config do |config|
     edit do
       field :name
       field :url
+    end
+  end
+  
+  config.model Setting do
+    label_plural "设置"
+    label "设置"
+    edit do
+      field :name
+      field :page
     end
   end
 

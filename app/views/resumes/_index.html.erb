@@ -1,0 +1,29 @@
+<style>
+table,td,th
+{
+border:0px solid black;
+}
+</style>
+<%User::TITLES.each do |title|%>
+	<%if User.with_title(title).any?%>
+		<h3><%=title%></h3>
+		<table>
+			<tr>
+			<%User.with_title(title).each_with_index do |user, i|%>
+				<%if i%5==0%>
+				</tr>
+				<tr>
+				<%end%>
+				<td>
+				<%if user.resumes.any?%>
+					<%=link_to user.name, resume_path(user.resumes.first)%>
+				<%else%>
+					<%=user.name%>
+				<%end%>
+				</td>	
+			<%end%>
+			</tr>
+		</table>
+		<hr>
+	<%end%>
+<%end%>

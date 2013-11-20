@@ -9,10 +9,10 @@
             <div class="post-entry">
 				<div class="indent">
 				</div>
-				<%=@page.content.html_safe unless @page.resumes.any?%>
-				<%@page.resumes.each do |resume|%>
-					<%=resume.content.html_safe%>
-					<hr>
+				<%if Setting.used_pages.include? @page%>
+					<%=render "#{Setting.getName(@page).downcase}s/index"%>
+				<%else%>
+					<%=@page.content.html_safe%>
 				<%end%>
         	</div>
 		</div>    

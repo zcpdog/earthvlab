@@ -15,6 +15,7 @@ Earthvlab::Application.routes.draw do
   resources :achievements
   resources :infos
   resources :refers
+  resources :resumes
   
   get 'search' => 'home#search'
   # Example of regular route:

@@ -1,0 +1,30 @@
+<div id="container" class="hfeed">
+	<%=render "layouts/header"%>
+<div id="content" class="grid col-620">
+	<div class="breadcrumb-list" xmlns:v="http://rdf.data-vocabulary.org/#">
+		<%=render_breadcrumbs %>
+	</div>        
+	<div id="post-" class="post-41 page type-page status-publish hentry">       
+		<!--Removed the retreat loop-header command-->
+	    <div class="post-entry">
+			<div class="indent">
+			</div>
+			<%=@resume.content.html_safe%>
+	    </div><!-- end of .post-entry -->
+	</div>
+</div><!-- end of #content -->
+<div id="widgets" class="grid col-220 fit">
+	<div id="text-13" class="widget-wrapper widget_text">
+		<div class="widget-title"><%=@resume.user.name%></div>			
+		</div>
+		<%=image_tag "right_side.png"%>
+		<div id="text-16" class="widget-wrapper widget_text">
+			<div class="widget-title">更多链接</div>			
+			<div class="textwidget">
+				<a href="/">关于我们</a>
+				<br/>
+				<a href="/">联系我们</a>
+			</div>
+		</div>
+</div><!-- end of #widgets -->
+</div>

@@ -2,20 +2,7 @@
 	var colomatduration = 'fast';
 	var colomatslideEffect = 'slideFade';
 </script>
-<body class="home page page-id-548 page-template page-template-front-page-itu-php">
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-24309155-3']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>                 
+<body class="home page page-id-548 page-template page-template-front-page-itu-php">        
 <div id="container" class="hfeed">
 	   <%=render "layouts/header"%>
 	   <div id="featured" class="grid col-960 frontwrapper">
@@ -27,7 +14,7 @@
       				   		class="soliloquy-item" style="width: 100%; 
    								float: left; margin-right: -100%; position: relative; display: none;">
       					   <a href="/" title="">
-      						  <%=image_tag gallery.avatar.url%>
+      						  <%=image_tag gallery.avatar.url(:medium)%>
       					   </a>
       				    </li>
       				<%end%>
