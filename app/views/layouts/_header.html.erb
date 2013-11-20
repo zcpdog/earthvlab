@@ -1,11 +1,19 @@
 <div id="header">
     <div id="logo">
         <a href="/"><%=image_tag "logo.jpg", :heigit =>95, :style => "float:left;"%></a>
+	    
 	    <form method="get" class="search" id="searchform" action="/search">
 			<input type="text" class="field" name="search" id="search" placeholder="您需要什么？">
 			<input type="submit" class="submit-button" name="submit" id="searchsubmit" value="搜索" >
+			<%if current_user.present?%>
+				<%=link_to "管理","/admin"%>
+			<%else%>
+				<%=link_to "登陆", "/users/sign_in"%>
+			<%end%>
 		</form>
     </div><!-- end of #logo -->
+    
+	
 	 <div class="main-nav">
 		 <ul id="menu-main" class="menu" >
 			 <li id="menu-item-0"
