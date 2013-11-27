@@ -8,6 +8,7 @@ class Achievement < ActiveRecord::Base
   scope :recent, -> { limit(5) }
   validates_presence_of :title, :content
   validates_attachment_size :thumb, :less_than => 10.megabytes
+  belongs_to :page
   
   def plain_content
     Nokogiri::HTML(content).text[0..90]<<"......" if content.present?

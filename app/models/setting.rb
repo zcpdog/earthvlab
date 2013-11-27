@@ -1,7 +1,7 @@
 class Setting < ActiveRecord::Base
   belongs_to :page
   def name_enum
-    ['resume']
+    ['resume','achievement']
   end
   validates_presence_of :name, :page
   validates :page, uniqueness: true

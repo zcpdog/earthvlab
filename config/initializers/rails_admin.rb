@@ -6,9 +6,18 @@ RailsAdmin.config do |config|
     label '页面' 
     label_plural '页面' 
     edit do
-      field :title
-      field :parent
-      field :content, :ck_editor
+      field :title do
+        label "标题"
+      end
+      field :parent do
+        label "所属页面"
+      end
+      field :is_achievement do
+        label "加入最新成果展示"
+      end
+      field :content, :ck_editor do
+        label "内容"
+      end
     end
     list do
       field :title
