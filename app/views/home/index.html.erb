@@ -9,8 +9,8 @@
 		   <div id="soliloquy-container-471" class="soliloquy-container soliloquy-fade soliloquy-preloader" style="max-width: 960px; max-height: 400px; ">
 			   <div id="soliloquy-471" class="soliloquy">
 				  <ul id="soliloquy-list-471" class="soliloquy-slides">
-      			  	<%Gallery.visiable.each do |gallery|%>
-      				    <li id="soliloquy-471-item-1" 
+      			  	<%Gallery.visiable.each_with_index do |gallery,i|%>
+      				    <li id="soliloquy-471-item-<%=i+1%>" 
       				   		class="soliloquy-item" style="width: 100%; 
    								float: left; margin-right: -100%; position: relative; display: none;">
       					   <a href="/" title="">
@@ -20,6 +20,10 @@
       				<%end%>
 				  </ul>
 		  	   </div>
+			   <ul class="soliloquy-direction-nav">
+				   <li><a class="soliloquy-prev" href="#">Previous</a></li>
+				   <li><a class="soliloquy-next" href="#">Next</a></li>
+			   </ul>
 	        </div>
 	    </div>
   
@@ -145,6 +149,14 @@ jQuery('#applicants-home select[name=00Ni0000005aQR4]').change(function(e){
 		    </div><!-- end of #wrapper -->
     <!-- end of #container -->
 		
-				<script type="text/javascript">jQuery(window).load(function(){jQuery('#soliloquy-471').flexslider({animation:'fade',slideshowSpeed:7000,animationDuration:600,controlsContainer:'#soliloquy-container-471',namespace:'soliloquy-',selector:'.soliloquy-slides > li',useCSS:false});});</script>
+<script type="text/javascript">
+	jQuery(window).load(function(){
+		jQuery('#soliloquy-471').flexslider({
+		animation:'fade',slideshowSpeed:7000,animationDuration:600,
+		controlsContainer:'#soliloquy-container-471',namespace:'soliloquy-',
+		selector:'.soliloquy-slides > li',useCSS:false
+		});
+	});
+</script>
 				
 </body>
