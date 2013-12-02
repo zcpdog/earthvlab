@@ -10,7 +10,7 @@ border:0px solid black;
 		<table>
 			<tr>
 			<%User.with_title(title).each_with_index do |user, i|%>
-				<%if i%5==0%>
+				<%if (i+1)%6==0%>
 				</tr>
 				<tr>
 				<%end%>
@@ -21,6 +21,9 @@ border:0px solid black;
 					<%=user.name%>
 				<%end%>
 				</td>	
+			<%end%>
+			<%(0..User.with_title(title).length%5 - 1).each do |j|%>
+				<td></td>
 			<%end%>
 			</tr>
 		</table>
