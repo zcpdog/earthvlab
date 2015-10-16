@@ -8,7 +8,7 @@ set :stages, ["staging", "production"]
 set :default_stage, "staging"
 default_run_options[:pty] = true
 set :application, "earthvlab"
-set :repository,  "git@git.oschina.net:zcp/vlab.git"
+set :repository,  "git@github.com:zcpdog/earthvlab.git"
 set :deploy_via, :remote_cache
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
